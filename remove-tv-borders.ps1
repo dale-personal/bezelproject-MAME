@@ -1,13 +1,15 @@
 $files = Get-ChildItem -File -Filter *.png  -Path retroarch\overlay\ArcadeBezels\
 
 $vertical = Get-Content -Path .\mame_vert.txt
+$skip_bezel = Get-Content -Path .\mame_skip_bezel.txt
+$no_bezel = Get-Content -Path .\mame_no_bezel.txt
 
 for ($i=0; $i -lt $files.Count; $i++) {
     Write-Output $files[$i].FullName
-    if ($files[$i].BaseName -eq "darius") {
-        Write-Output "skipping"
+    if ($no_bezel -contains $files[$i].BaseName) {
+        Remove-Item $files[$i].FullName
     }
-    elseif ($files[$i].BaseName -eq "darius2") {
+    elseif ($skip_bezel -contains $files[$i].BaseName){
         Write-Output "skipping"
     }
     elseif ($vertical -contains $files[$i].BaseName){
