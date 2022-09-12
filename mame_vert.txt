@@ -1,4 +1,3 @@
-ARCADE64 0.219 (Feb 27 2020).
 005
 1941
 1941j
@@ -195,6 +194,7 @@ armedf
 armedff
 armorcar
 armorcar2
+armwrest
 ashura
 ashuraj
 ashurau
@@ -2414,6 +2414,7 @@ spiders2
 spiders3
 spinkick
 spinner
+spnchout
 sprglbpg
 sprglobp
 springer
